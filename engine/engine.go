@@ -10,4 +10,4 @@ func NewEngine() *Engine {
 	}
 }
 
-func (e *Engine) Apply(cmd Command, out []Event) []Event
+func (e *Engine) Apply(cmd Command, out []Event) []Event { panic("not implemented") }
