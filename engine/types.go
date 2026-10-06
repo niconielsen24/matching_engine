@@ -21,15 +21,17 @@ const (
 type TIF uint8 // Time in Force
 
 const (
-	GTC TIF = iota
-	IOC
-	FOK
+	TIFunset TIF = iota
+	GTC          // Good Till Cancelled
+	IOC          // Immediate or Cancel
+	FOK          // Fill or Kill
 )
 
 type CmdKind = int8
 
 const (
-	New CmdKind = iota
+	CmdUnset CmdKind = iota
+	New
 	Cancel
 )
 
@@ -64,6 +66,8 @@ const (
 	InvalidSide
 	InvalidType
 	PostOnlyRejected
+	UnknownCommand
+	DuplicateOrderID
 )
 
 type Event struct {
